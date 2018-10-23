@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/BaseFind/baseFind",
+    "pages/BaseHome/baseHome",
+    "pages/BaseMine/baseMine",
+    "pages/ShopMain/shopMain",
+    "pages/VoucherMain/voucherMain",
+    "components/widgetsComment/widgetsComment",
+    "components/widgetsMap/widgetsMap"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000,
+    "uploadFile": 5000,
+    "downloadFile": 5000
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#009BFD",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/BaseHome/baseHome",
+        "iconPath": "image/ftenlog_home.png",
+        "selectedIconPath": "image/ftenlog_home_focus.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/BaseFind/baseFind",
+        "iconPath": "image/ftenlog_find.png",
+        "selectedIconPath": "image/ftenlog_find_focus.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/BaseMine/baseMine",
+        "iconPath": "image/ftenlog_mine.png",
+        "selectedIconPath": "image/ftenlog_mine_focus.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

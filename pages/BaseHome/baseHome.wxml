@@ -1,0 +1,59 @@
+<!--pages/BaseHome/baseHome.wxml-->
+<view class='userContent' wx:if='{{userType == 1}}'>
+
+  <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true" indicator-active-color="#fff" interval="3000" duration="1000">
+    <block wx:for="{{slideList}}" wx:for-index="index" wx:key="item">
+      <navigator url='#' class='title'>
+        <swiper-item>
+          <image src="{{item.imgUrl}}" />
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+
+  <view class='typeBlock ptb30'>
+    <view class='t_itemList' wx:for="{{typeBlock}}" wx:key="item">
+      <view class='t_itemBg'>
+        <text class="{{item.icon}}"></text>
+      </view>
+      <text class="t_itemTitle">{{item.title}}</text>
+    </view>
+  </view>
+
+  <view class='lineMax'></view>
+
+  <view class='phoneArea' wx:for="{{tipsList}}" wx:for-index="index" wx:key="item" wx:if='{{currentTips == index}}'>
+    <view class='p_title'>
+      <text class='text1'>{{tipsList[currentTips].title}}</text>
+      <text class='text2'>{{tipsList[currentTips].desc}}</text>
+    </view>
+  </view>
+
+  <view class='p_content'>
+    <!-- <view bindtap="goShopMain" id="goods" data-hi="{{item}}" class='item_content' wx:for="{{shopList}}" wx:for-index="index" wx:key="item" wx:if='{{item.category == 1}}'> -->
+    <view class='item_content' wx:for="{{shopList}}" wx:for-index="index" wx:key="item" wx:if='{{item.category == 1}}'>
+      <navigator url="/pages/ShopMain/shopMain?goods={{item.goodsId}}">
+        <image class="item_content_img" src="{{item.goodsImg}}" />
+        <text wx:if='{{item.discount != 0}}' class='icon iconfont icon-zhekou topIconMark'></text>
+        <view class='plr20' >
+          <view class='item_content_title'>{{item.goodsName}}</view>
+          <text class='item_content_describe'>{{item.goodsDesc}}</text>
+          <view class='item_content_price clearfix'>
+            <text class='price1 fl'>￥{{(item.price - item.discount)/100}}起</text>
+            <text class='price2 fr' wx:if='{{item.discount != 0}}'>￥{{item.price/100}}</text>
+          </view>
+          <view class='clearfix  fs20 c_999'>
+            <text class='fl'><text class='icon iconfont icon-good-review c_f97'></text>好评率：<text>99.9%</text></text>
+            <text class='fr'><text class='icon iconfont icon-xiaoliang c_f97'></text>销量：<text>657万</text></text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+<view class='upperContent' wx:if='{{userType == 2}}'>
+  <text>广告商所看到的</text>
+
+</view>

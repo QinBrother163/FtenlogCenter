@@ -1,0 +1,30 @@
+<!--pages/BaseFind/baseFind.wxml-->
+<view class='userContent' wx:if='{{userType == 1}}'>
+<view class='left_bar border_view'>
+  <view class="swiper-tab border_view {{currentTab == item.goodsTypeId ?'active_item':''}}" wx:key="goodsTypeId" wx:for="{{GoodsTypeDatas}}" bindtap="toogleLeftBar" data-menuItem="{{item}}">
+      <text  class="swiper-tab-item">{{item.goodsTypeName}}</text>
+  </view>
+</view>
+<view class='rigth_bar border_view'>
+    <cover-image class='rigth_bar_item_bigBg' src='{{currentInfo.goodsTypeImg}}' />
+    <view class='rigth_bar_cotent'>
+     <text class='rigth_bar_tips'>热门套餐</text>
+      <view wx:key="productId" wx:for="{{GoodsInfoDatas}}" class='rigth_bar_item' wx:if='{{item.category == currentTab && item.complex == 1}}'>
+           <cover-image class='rigth_bar_item_img'  src='{{item.goodsImg}}'/>
+           <text class='rigth_bar_item_name'>{{item.goodsName}}</text>
+      </view>
+      <text class='rigth_bar_tips'>热门商品</text>
+      <view wx:key="productId" wx:for="{{GoodsInfoDatas}}" class='rigth_bar_item' wx:if='{{item.category == currentTab && item.complex == 0}}'>
+           <cover-image class='rigth_bar_item_img'  src='{{item.goodsImg}}'/>
+           <text class='rigth_bar_item_name'>{{item.goodsName}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class='upperContent' wx:if='{{userType == 2}}' class='container'>
+  <text>广告商所看到的</text>
+</view>

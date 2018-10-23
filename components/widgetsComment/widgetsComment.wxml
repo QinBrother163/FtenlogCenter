@@ -1,0 +1,24 @@
+<!--components/widgetsComment/widgetsComment.wxml-->
+<view id='root'>
+
+  <view class='commentWrap'>
+    <view class='plr20'>
+      <view wx:for="{{commentData}}" wx:for-index="index" wx:key="item" class='list_comment'>
+        <view class='name_date fs22 c_999'>
+          <text>{{item.name}}</text>
+          <text>{{item.date}}</text>
+        </view>
+
+        <view class='info fs26 c_333 mt10'>
+          {{item.info}}
+        </view>
+
+        <view class='meal fs22 c_999 mt10'>
+          套餐：{{item.comment}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

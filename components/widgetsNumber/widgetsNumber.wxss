@@ -1,0 +1,230 @@
+/* components/widgetsNumber/widgetsNumber.wxss */
+@import "../../assets/iconfont/iconfont.wxss";
+@import "../../assets/css/public.wxss";
+
+.widgetsNumber {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s 80ms;
+  will-change: opacity;
+}
+
+.widgetsNumber.show {
+  pointer-events: auto;
+  opacity: 1;
+  z-index: 999;
+}
+
+.widgetsNumber.show .widgetsNumber_bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.widgetsNumber.show .widgetsNumber_contert {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.widgetsNumber .widgetsNumber_bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.widgetsNumber .widgetsNumber_contert {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 20%;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.25, 1) 80ms;
+  transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1) 80ms;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
+  box-shadow: 0 -1rpx 40rpx rgba(0, 0, 0, 0.3);
+}
+
+.contert_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  padding: 10rpx 0 10rpx 250rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header .imgWrap {
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  top: -58rpx;
+  left: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  border: 1rpx solid rgba(0, 0, 0, 0.1);
+  padding: 1rpx;
+  background-color: #fff;
+}
+
+.imgWrap image {
+  width: 100%;
+  height: 100%;
+}
+
+.header .main {
+  color: #051b28;
+  font-size: 22rpx;
+  line-height: 18rpx;
+  padding-right: 20rpx;
+}
+
+.main .p1 {
+  font-size: 40rpx;
+  margin-top: 15rpx;
+}
+
+.main .p2 {
+  margin-top: 25rpx;
+}
+
+.header .close {
+  position: absolute;
+  top: 16rpx;
+  right: 20rpx;
+  font-size: 50rpx;
+}
+
+.contert_wrap .body {
+  padding: 0 15px 10px;
+  position: absolute;
+  bottom: 48px;
+  top: 93px;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.contert_wrap .body::before {
+  content: "";
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.body .titleName {
+  margin: 25rpx 0;
+}
+
+.body .body_item {
+  width: auto;
+  background: #eee;
+  padding: 15rpx 20rpx;
+  margin: 20rpx 20rpx 0 0;
+  color: #666;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+}
+
+.body .number_wrap {
+  padding: 30rpx 0;
+  margin-top: 50rpx;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  line-height: 60rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+
+.number_right .icon1, .number_right .icon2, .number_right .number {
+  float: left;
+  border: 1rpx solid #eee;
+  padding: 0 20rpx;
+  height: 60rpx;
+}
+
+.number_right .icon1, .number_right .icon2 {
+  font-weight: bold;
+}
+
+.number_right .number {
+  font-size: 26rpx;
+}
+
+.number_right .icon1 {
+  margin-right: 10rpx;
+}
+
+.number_right .icon2 {
+  margin-left: 10rpx;
+}
+
+.contert_wrap .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.footer view:nth-child(1) {
+  background: #ff9500;
+}
+
+.footer view:nth-child(2) {
+  background: #ff0036;
+}

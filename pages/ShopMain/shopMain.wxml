@@ -1,0 +1,141 @@
+<!-- pages/ShopMain/shopMain.wxml -->
+<view id='root'>
+
+  <swiper class="swiper" indicator-dots="true" circular="true" indicator-active-color="#fff" interval="3000" duration="1000">
+    <block wx:for="{{goodsTopBarImg}}" wx:for-index="index" wx:key="item">
+      <navigator url='#' class='title'>
+        <swiper-item>
+          <image src="{{item.imgUrl}}" />
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+
+  <view class='shopMain_goodsInfo'>
+    <view class='plr20'>
+      <view class='goodsInfo_price clearfix'>
+        <text class='fl c_f97'>{{goodsInfo.price - goodsInfo.discount}}</text>
+        <text class='fr fs22 c_999'>月销量{{goodsInfo.saleNum}}件</text>
+      </view>
+      <view class='goodsInfo_intro'>
+        {{goodsInfo.goodsDesc}}
+      </view>
+    </view>
+  </view>
+
+  <view class='lineMax'></view>
+
+  <view class='selectListWrap'>
+    <view bindtap="showWidgetsCoupon" class='flex_bt flex_box fs26 c_999 selectList'>
+      <text class='p1'>优惠 <text class='icon iconfont icon-lingjuanzhongxin c_f97'>超级减免购物券</text></text>
+      <text class='flex_box p2'>领取<text class='icon iconfont icon-jiantou'></text></text>
+    </view>
+
+    <view bindtap="showWidgetsNumber" class='flex_bt flex_box fs26 c_999 selectList'>
+      <text class='p1'>选择 <text class='icon iconfont icon-lingjuanzhongxin c_f97'>请选择存储容量/机身颜色/网络类型/套餐类型</text></text>
+      <text class='flex_box p2'><text class='icon iconfont icon-jiantou'></text></text>
+    </view>
+  </view>
+
+  <view class='lineMax'></view>
+
+  <view class='shopMain_goodsDiscuss'>
+    <view class='plr20'>
+      <view bindtap="getComment" class='flex_bt flex_box fs26 c_999 selectList'>
+        <text class='p1'>商品评论（153672)</text>
+        <text class='flex_box p2'>更多<text class='icon iconfont icon-jiantou'></text></text>
+      </view>
+
+      <view class='labelWrap'>
+        <text class='label_item'>高大上(1264)</text>
+        <text class='label_item'>高大上(1264)</text>
+        <text class='label_item'>高大上(1264)</text>
+      </view>
+
+      <view class='user_Discuss_wrap'>
+        <image class='user_Discuss_img' src='https://static.youshuge.com/book_img/I1m7mgptCle48kF1PML8fHUWmiyrVB3LnOLbV4JU.jpeg' />
+        <text class='user_Discuss_name fs22 c_999'>污泥小乌贼</text>
+        <view class='goodsInfo_intro c_333'>
+          给老父亲买的生日礼物哈可开心了～手机轻薄智能，指纹识别非常灵敏，老爸特别喜欢！黑色高级感十足。大小大概是非全屏的5.5寸大小。和苹果7P大小差不多。顺丰同城到货贼快。供参考
+        </view>
+        <view class='goodsInfo_meal fs22 c_999'>
+          2018-10-07 网络类型:4G全网通;机身颜色:亮黑色;套餐类型:官方标配;存储容量:6+64GB
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='lineMax'></view>
+
+
+  <view class='goodsRecommendWrap'>
+
+    <view class='plr20'>
+      <view class='flex_bt flex_box fs26 c_999 selectList'>
+        <text class='p1'>看了又看</text>
+      </view>
+
+      <view class='p_content'>
+        <view class='item_content' wx:for="{{shopList}}" wx:for-index="index" wx:key="item" wx:if='{{item.category == 1}}'>
+          <navigator url="/pages/ShopMain/shopMain?goods={{item.goodsId}}">
+            <image class="item_content_img" src="{{item.goodsImg}}" />
+            <text wx:if='{{item.discount != 0}}' class='icon iconfont icon-zhekou topIconMark'></text>
+            <view class='plr20'>
+              <view class='item_content_title'>{{item.goodsName}}</view>
+              <text class='item_content_describe'>{{item.goodsDesc}}</text>
+              <view class='item_content_price '>
+                <view class='price1 '>￥{{(item.price - item.discount)/100}}起</view>
+                <view class='price2 ' wx:if='{{item.discount != 0}}'>￥{{item.price/100}}</view>
+              </view>
+              <view class='  fs20 c_999'>
+                <view class=''>
+                  <text class='icon iconfont icon-good-review c_f97'></text>好评率：
+                  <text>{{item.good}}%</text>
+                </view>
+                <view class=''>
+                  <text class='icon iconfont icon-xiaoliang c_f97'></text>销量：
+                  <text>{{item.saleNum}}</text>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+    <view class='lineMMax'>详情 </view>
+    <view class='goodsDetails' wx:for="{{goodsBriefImg}}" wx:for-index="index" wx:key="item">
+      <image class='goodsDetailsImg' src='{{item.imgUrl}}'></image>
+    </view>
+  </view>
+
+  <view class='footerHead'>
+    <view class='footerHead_wrap'>
+      <view class='list_box'>
+        <text class='icon iconfont icon-kefu fs30'></text>
+        <view class='fs22 c_666'>客服</view>
+      </view>
+      <view class='list_box'>
+        <text class='icon iconfont icon-shoucang fs30'></text>
+        <view class='fs22 c_666'>收藏</view>
+      </view>
+      <view class='list_box'>
+        <view>加入购物车</view>
+      </view>
+      <view class='list_box'>
+        <view>立即购买</view>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <widgetsNumber id='widgetsNumber' bind:numAddEvent="_numAddEvent" bind:numCutEvent="_numCutEvent" bind:setFont="_setFont" bind:cancelEvent="_cancelEvent" bind:addEvent="_addEvent" bind:buyEvent="_buyEvent">
+    </widgetsNumber>
+  </view>
+    <view>   
+
+
+    <widgetsCoupon couponData="{{couponData}}" id='widgetsCoupon' bind:getCoupon="_wc_getCoupon" bind:wc_okEvent="_wc_okEvent" bind:wc_closeEvent="_wc_closeEvent">
+    </widgetsCoupon>
+  </view>
+</view>

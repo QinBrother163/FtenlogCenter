@@ -1,0 +1,46 @@
+<!--components/widgetsCoupon/widgetsCoupon.wxml-->
+<view class='widgetsNumber {{is_Show?"show":""}}'>
+
+  <view catchtap='_wc_closeEvent' class='widgetsNumber_bg'></view>
+
+
+  <view class='widgetsNumber_contert '>
+    <view class='contert_wrap'>
+      <view class='header'>
+        <view class=' fs30 titleName'>优惠卷</view>
+      </view>
+
+      <view class='body '>
+        <view class='bodywrap' id="coupon" data-couponItrm='{{item}}' bindtap="wc_getCoupon" wx:for="{{couponData}}" wx:for-index="index" wx:key="item">
+          <view class='body_left'>
+            <view class='tb'>
+              <view class='tc fs20'>
+                <view class='c_main'>
+                  <text>￥</text>
+                  <text class='price'>{{item.goodsPrice}}</text>
+                </view>
+
+                <view class='c_sub'>
+                  <view>满{{item.limitNumber}}使用</view>
+                  <view>有效期 {{item.startDate}} 至 {{item.endDatee}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class='body_middle '>
+            <view class='line'></view>
+          </view>
+
+          <view class='body_right fs26'>
+            <view class='c_main'>{{item.getStatus == 1?"立即领取":"失效"}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='footer'>
+        <view catchtap='_wc_okEvent' class='ok'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

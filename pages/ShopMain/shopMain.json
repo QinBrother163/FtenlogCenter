@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "widgetsNumber": "/components/widgetsNumber/widgetsNumber",
+    "widgetsCoupon": "/components/widgetsCoupon/widgetsCoupon"
+  }
+}

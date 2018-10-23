@@ -1,0 +1,119 @@
+<!--pages/BaseMine/baseMine.wxml-->
+<view class='userContent' wx:if='{{userType == 1}}'>
+
+  <view class='userInfoHead plr20'>
+    <view class='H_info_wrap'>
+      <image class='H_info_img' src='{{userInfo.avatarUrl}}' />
+      <view class='H_info_name_wrap'>
+        <text class='H_info_name'>{{userInfo.nickName}}</text>
+      </view>
+      <text class='icon iconfont icon-daren01 userHeadRight'></text>
+    </view>
+
+    <view class='H_data_wrap'>
+      <view class='info_item_wrap'>
+        <text wx:for="{{userStatusInfo}}" wx:key="item" bindtap='onUserStatusClick' data-url="{{item.url}}">{{item.num}}</text>
+      </view>
+      <view class='name_item_wrap'>
+        <text wx:for="{{userStatusInfo}}" wx:key="item" bindtap='onUserStatusClick' data-url="{{item.url}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='orderInfoWrap'>
+    <view class='orderInfoWrapBG '>
+      <view class='o_title_wrap flex_bt flex_box'>
+        <text class='p1'>我的订单</text>
+        <text class='flex_box p2'>更多<text class='icon iconfont icon-jiantou'></text></text>
+      </view>
+
+      <view class='lineMin'></view>
+
+      <view class='o_status_wrap'>
+        <view class='o_item_list' wx:for="{{orderStatusData}}" wx:key="item">
+          <text class='{{item.icon}}'></text>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+
+      <view class='logisticsInfoWrap'>
+        <view class='logisticsInfo'>
+
+          <view class='fs22 flex_bt flex_box c_666'>
+            <text class=''>最新物流</text>
+            <text class='flex_box '>14：07</text>
+          </view>
+
+          <view class='l_info_wrap'>
+            <view class='l_info_wrap_box'>
+              <image class='l_info_img' src='https://qcdn.zhangzhongyun.com/novel_banners/15338826952219.jpg' />
+              <view class='l_info_info'>
+                <text class='icon iconfont icon-paisongzhong fs22 p1'></text>
+                <text class=' fs22 p1'>配送中</text>
+                <view class='l_info_contert c_666'>
+                  <text class='fs22'>【广州市】广州科学城派件员：张大学 147852369111</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='moreDiscountWrap'>
+    <view class='moreDiscountBg'>
+      <view class='moreDiscount'>
+        <view class='fs22 flex_bt flex_box c_666'>
+          <text class=''>更多优惠</text>
+        </view>
+      </view>
+      <view class='lineMin' style='height:2rpx'></view>
+      <view class='moreDiscountContert'>
+        <view class='moreDiscountListWrap'>
+          <view class='moreDiscountList' wx:for="{{moreDiscount}}" wx:key="item">
+            <text class='{{item.icon}}'></text>
+            <text>{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='moreDiscountWrap'>
+    <view class='moreDiscountBg'>
+      <view class='moreDiscount'>
+        <view class='fs22 flex_bt flex_box c_666'>
+          <text class=''>常用工具</text>
+        </view>
+      </view>
+      <view class='lineMin' style='height:2rpx'></view>
+      <view class='moreDiscountContert'>
+        <view class='moreDiscountListWrap'>
+          <view id='goMorePage' data-index='index' bindtap="goMorePage" class='moreDiscountList' wx:for="{{moreTool}}" wx:key="item">
+            <text class='{{item.icon}}'></text>
+            <text>{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
+<view class='upperContent' wx:if='{{userType == 2}}'>
+  <text>广告商所看到的</text>
+</view>

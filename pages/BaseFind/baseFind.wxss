@@ -1,0 +1,89 @@
+/* pages/BaseFind/baseFind.wxss */
+.left_bar{
+  width: 22%;
+  height: 100vh;
+  font-size: 22rpx;
+  overflow-y: scroll;
+  float: left;
+  border-right: 1px solid #EDEDED;
+  border-top: 1px solid #EDEDED;
+  box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+   background: #f7f7f7;
+   color: #9b9b9b;
+}
+
+.left_bar::-webkit-scrollbar {
+    display: none;
+}
+
+.rigth_bar::-webkit-scrollbar {
+    display: none;
+}
+
+.swiper-tab{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height : 100rpx;
+}
+
+.rigth_bar{
+   width: 78%;
+   height: 100vh;
+   float: right;
+   border-top: 1px solid #EDEDED;
+   overflow-y: scroll;
+}
+
+.active_item{
+ /* color: #E65A00; */
+   color: #000000;
+   border-left: 3px solid #000000;
+   font-weight: bold;
+   background: #ffffff;
+   font-size: 26rpx;
+}
+
+
+.rigth_bar_item_bigBg{
+  width: 90%;
+  height: 250rpx;
+  margin-left: 5%;
+  margin-top: 10px
+}
+
+.rigth_bar_item{
+  float: left;
+  width: 30%;
+  height: 150rpx;
+  margin-top: 10rpx;
+}
+
+.rigth_bar_cotent{
+  width: 100%;
+  margin-left: 5%;
+  align-content: center;
+  text-align: center;
+}
+
+.rigth_bar_item_img{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.rigth_bar_item_name{
+  width: 80%;
+  font-size: 22rpx;
+}
+
+.rigth_bar_tips{
+  width: 100%;
+  font-size: 26rpx;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  float: left;
+}

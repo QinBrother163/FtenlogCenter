@@ -1,0 +1,42 @@
+<!--components/widgetsNumber/widgetsNumber.wxml-->
+<view class='widgetsNumber {{isShow?"show":""}}'>
+
+  <view catchtap='_cancelEvent' class='widgetsNumber_bg'></view>
+
+
+  <view class='widgetsNumber_contert '>
+    <view class='contert_wrap'>
+      <view class='header'>
+        <view class='imgWrap'>
+          <image src='{{imgName}}' />
+        </view>
+        <view class='main'>
+          <view class='c_f97 p1'>￥{{goodsPrice}}</view>
+          <view class='c_666 fs26 p2'>库存{{goodsNumber}}件</view>
+          <view class='c_666 fs26 p2'>请选择：颜色分类</view>
+        </view>
+        <text catchtap='_cancelEvent' class='icon iconfont icon-guanbi close c_999'></text>
+      </view>
+
+      <view class='body '>
+        <view class='c_f97 fs30 titleName'>颜色分类</view>
+        <text id="setFont" data-goodsIndex='{{index}}' bindtap="setFont" class='body_item ' wx:for="{{goodsContert}}" wx:for-index="index" wx:key="item">{{item}}</text>
+
+        <view class='number_wrap'>
+          <view class='number_left fs22'>购买数量( 每人限购{{limitNumber}}件 )</view>
+          <view class='number_right clearfix'>
+            <view catchtap='numCutEvent' class='icon iconfont icon--hao icon1'></view>
+            <view class='number'>{{initNumber}}</view>
+            <view catchtap='numAddEvent' class='icon iconfont icon-hao icon2'></view>
+          </view>
+        </view>
+
+      </view>
+
+      <view class='footer'>
+        <view catchtap='_addEvent' class='cart'>加入购物车</view>
+        <view catchtap='_buyEvent' class='buy'>立即购买</view>
+      </view>
+    </view>
+  </view>
+</view>
